@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 12 * * 1"   # cada lunes: detecta enlaces que se rompan con el tiempo
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: HTML válido y enlaces sin romper
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - name: Validar HTML
+        run: npx --yes html-validate@9 index.html 404.html
+      - name: Verificar enlaces
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # LinkedIn rechaza a los robots (HTTP 999): se excluye para evitar falsos positivos.
+          args: --no-progress --exclude linkedin.com --root-dir "${{ github.workspace }}" './**/*.html'
+          fail: true

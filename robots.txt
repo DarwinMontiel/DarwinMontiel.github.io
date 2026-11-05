@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://darwinmontiel.github.io/sitemap.xml
