@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Darwin Montiel Mora · Desarrollador RPA &amp; Backend</title>
-  <meta name="description" content="Desarrollador RPA y Backend en Bogotá. Bots en Python, colas RabbitMQ, PostgreSQL, Ruby on Rails, monitoreo de bots, despliegues y analítica de datos para gestión de cartera.">
+  <meta name="description" content="Desarrollador RPA y Backend en Bogotá. Bots en Python con Playwright, Selenium y OCR, colas RabbitMQ, SQL Server y PostgreSQL, monitoreo en tiempo real y analítica de datos para gestión de cartera.">
   <meta name="author" content="Darwin Montiel Mora">
   <meta name="theme-color" content="#0f1f2e">
   <link rel="canonical" href="https://darwinmontiel.github.io/">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="es_CO">
   <meta property="og:title" content="Darwin Montiel Mora · Desarrollador RPA & Backend">
-  <meta property="og:description" content="Bots en Python, colas RabbitMQ, PostgreSQL, Ruby on Rails y analítica de datos para operaciones de cobranza.">
+  <meta property="og:description" content="Bots en Python con Playwright, Selenium y OCR, colas RabbitMQ, SQL Server, PostgreSQL y monitoreo en tiempo real para operaciones de cobranza.">
   <meta property="og:url" content="https://darwinmontiel.github.io/">
   <meta property="og:image" content="https://darwinmontiel.github.io/assets/img/og.png">
   <meta property="og:image:width" content="1200">
@@ -27,7 +27,7 @@
     "jobTitle": "Desarrollador RPA & Backend",
     "address": { "@type": "PostalAddress", "addressLocality": "Bogotá", "addressCountry": "CO" },
     "alumniOf": "Universidad ECCI",
-    "knowsAbout": ["RPA", "Python", "RabbitMQ", "PostgreSQL", "Ruby on Rails", "Power BI", "Linux", "Windows Server"],
+    "knowsAbout": ["RPA", "Python", "Playwright", "Selenium", "OCR", "RabbitMQ", "SQL Server", "PostgreSQL", "TypeScript", "Fastify", "Redis", "Ruby on Rails", "Power BI", "Docker", "Windows Server", "Linux"],
     "url": "https://darwinmontiel.github.io/",
     "sameAs": ["https://github.com/DarwinMontiel", "https://www.linkedin.com/in/darwin-montiel-mora-925216206"]
   }
@@ -67,11 +67,12 @@
         <div class="hero__text">
           <p class="eyebrow">Bogotá, Colombia · Disponible para nuevos retos</p>
           <h1>Darwin Montiel Mora</h1>
-          <p class="hero__role">Desarrollador RPA &amp; Backend · Ingeniero de Sistemas</p>
+          <p class="hero__role">Desarrollador RPA &amp; Backend</p>
           <p class="hero__pitch">
-            Construyo <strong>bots que automatizan procesos sobre aplicativos web</strong> y los sistemas que
-            los hacen confiables en producción: colas de mensajes, trazabilidad, monitoreo, despliegues
-            en Windows y Linux, y los datos para medir resultados.
+            Construyo <strong>bots en Python con Playwright y Selenium</strong>, integrados con
+            <strong>RabbitMQ</strong>, <strong>SQL Server</strong> y <strong>PostgreSQL</strong>, y los sistemas que
+            los hacen confiables en producción: colas con reintentos y DLQ, idempotencia, OCR,
+            monitoreo en tiempo real y despliegues automáticos en servidores Windows y Linux.
           </p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
@@ -83,10 +84,10 @@
       </div>
       <div class="wrap">
         <ul class="stats">
-          <li><strong>3 años</strong><span>en desarrollo, RPA y datos</span></li>
-          <li><strong>+200</strong><span>pruebas automatizadas en mis proyectos</span></li>
-          <li><strong>4</strong><span>certificaciones: Blue Prism, Robocorp y Cisco</span></li>
-          <li><strong>3 países</strong><span>de operación en fintech de cartera</span></li>
+          <li><strong>+12.000</strong><span>expedientes en alcance de mis bots en producción</span></li>
+          <li><strong>≈65 % → ≈99 %</strong><span>de acierto al leer imágenes con OCR</span></li>
+          <li><strong>+400</strong><span>pruebas automatizadas (pytest) en una fintech</span></li>
+          <li><strong>3 años</strong><span>en desarrollo, RPA y datos · Blue Prism y Robocorp</span></li>
         </ul>
       </div>
     </section>
@@ -95,58 +96,93 @@
       <div class="wrap">
         <header class="section__head">
           <h2>Proyectos</h2>
-          <p>Código abierto, documentado y con integración continua. Juntos modelan una operación de cobranza: bots, CRM y analítica.</p>
+          <p>Código abierto, documentado y con integración continua. Juntos modelan una operación de cobranza ficticia: bots que trabajan, una torre que los vigila, un CRM para los gestores y un radar que mide resultados.</p>
         </header>
 
         <article class="project">
-          <a class="project__media" href="https://darwinmontiel.github.io/rpa-orchestrator/" target="_blank" rel="noopener">
-            <img src="assets/img/rpa-orchestrator.webp" width="960" height="600" loading="lazy" alt="Dashboard de monitoreo de bots con KPIs, workers y tareas">
+          <a class="project__media" href="https://darwinmontiel.github.io/colmena-rpa/" target="_blank" rel="noopener">
+            <img src="assets/img/colmena-rpa.webp" width="960" height="600" loading="lazy" alt="Panel de operación de Colmena RPA con indicadores, obreras y tareas">
           </a>
           <div class="project__body">
-            <p class="project__kicker">Automatización · Mensajería · Monitoreo</p>
-            <h3>RPA Orchestrator</h3>
-            <p>Plataforma para operar bots RPA a escala: tareas distribuidas por <strong>RabbitMQ</strong> con reintentos escalonados y cola de mensajes muertos, errores de negocio vs. sistema, idempotencia en tres capas, trazabilidad completa en <strong>PostgreSQL</strong> y monitoreo de bots por latidos.</p>
+            <p class="project__kicker">Automatización · Mensajería · Fiabilidad</p>
+            <h3>Colmena RPA</h3>
+            <p>Bots obreros que registran acuerdos de pago en un portal de cartera. Tareas por <strong>RabbitMQ</strong> con reintentos escalonados y cola de mensajes muertos (DLQ), errores de negocio separados de los de sistema, <strong>idempotencia</strong> y trazabilidad completa en <strong>PostgreSQL</strong>. Se despliega como servicio en Linux (systemd) y Windows Server (NSSM).</p>
             <ul class="chips">
-              <li>Python</li><li>RabbitMQ</li><li>PostgreSQL</li><li>Playwright</li><li>FastAPI</li><li>Docker</li><li>systemd · NSSM</li>
+              <li>Python</li><li>RabbitMQ</li><li>PostgreSQL</li><li>Playwright</li><li>FastAPI</li><li>Docker</li>
             </ul>
             <p class="project__links">
-              <a href="https://darwinmontiel.github.io/rpa-orchestrator/" target="_blank" rel="noopener">Demo en vivo</a>
-              <a href="https://github.com/DarwinMontiel/rpa-orchestrator" target="_blank" rel="noopener">Código</a>
+              <a href="https://darwinmontiel.github.io/colmena-rpa/" target="_blank" rel="noopener">Demo en vivo</a>
+              <a href="https://github.com/DarwinMontiel/colmena-rpa" target="_blank" rel="noopener">Código</a>
             </p>
           </div>
         </article>
 
         <article class="project project--reverse">
-          <a class="project__media" href="https://darwinmontiel.github.io/cartera-analytics/" target="_blank" rel="noopener">
-            <img src="assets/img/cartera-analytics.webp" width="960" height="600" loading="lazy" alt="Tablero de cartera con saldo, PAR30, recaudo y franjas de mora">
+          <a class="project__media" href="https://darwinmontiel.github.io/torre-de-control/" target="_blank" rel="noopener">
+            <img src="assets/img/torre-de-control.webp" width="960" height="600" loading="lazy" alt="Tablero de Torre de Control con colas, bots, servidores y alertas en tiempo real">
           </a>
           <div class="project__body">
-            <p class="project__kicker">Datos · ETL · Business Intelligence</p>
-            <h3>Cartera Analytics</h3>
-            <p>Pipeline ETL que convierte exportes "sucios" en un <strong>modelo estrella</strong>: 29 reglas de calidad de datos con cuarentena, KPIs de riesgo y cobranza (PAR30, roll rates, tasa de recuperación), medidas <strong>DAX</strong> para Power BI y reporte Excel. Las pruebas verifican que pandas y SQL den exactamente los mismos números.</p>
+            <p class="project__kicker">Observabilidad · Tiempo real · TypeScript</p>
+            <h3>Torre de Control</h3>
+            <p>Monitoreo en tiempo real de bots RPA: lee las colas de RabbitMQ, cataloga servidores y bots, recibe latidos y dispara alertas (cola que crece, DLQ con mensajes, bot sin latido). API <strong>Fastify</strong> documentada con OpenAPI, estado vivo en <strong>Redis</strong>, eventos por <strong>WebSocket</strong> y SDK en Python para que los bots reporten.</p>
             <ul class="chips">
-              <li>Python</li><li>pandas</li><li>PostgreSQL</li><li>SQL</li><li>Power BI · DAX</li><li>Excel</li>
+              <li>TypeScript</li><li>Fastify</li><li>PostgreSQL</li><li>Redis</li><li>WebSocket</li><li>Vitest</li><li>Docker</li>
             </ul>
             <p class="project__links">
-              <a href="https://darwinmontiel.github.io/cartera-analytics/" target="_blank" rel="noopener">Tablero en vivo</a>
-              <a href="https://github.com/DarwinMontiel/cartera-analytics" target="_blank" rel="noopener">Código</a>
+              <a href="https://darwinmontiel.github.io/torre-de-control/" target="_blank" rel="noopener">Demo en vivo</a>
+              <a href="https://github.com/DarwinMontiel/torre-de-control" target="_blank" rel="noopener">Código</a>
             </p>
           </div>
         </article>
 
         <article class="project">
-          <a class="project__media" href="https://github.com/DarwinMontiel/cartera-crm" target="_blank" rel="noopener">
-            <img src="assets/img/cartera-crm.webp" width="960" height="600" loading="lazy" alt="Tablero del CRM de cobranza con indicadores y próximas cuotas">
+          <a class="project__media" href="https://github.com/DarwinMontiel/vigia-ocr" target="_blank" rel="noopener">
+            <img src="assets/img/vigia-ocr.webp" width="960" height="600" loading="lazy" alt="Banco de evaluación de Vigía OCR comparando el acierto de cada motor">
+          </a>
+          <div class="project__body">
+            <p class="project__kicker">RPA · Visión · Arquitectura hexagonal</p>
+            <h3>Vigía OCR</h3>
+            <p>Bot con <strong>Selenium</strong> que consulta un portal público simulado donde el estado viene como imagen. Preprocesa y lee con varios motores <strong>OCR</strong> (ddddocr, EasyOCR, Tesseract) con votación y validación, guarda en <strong>SQL Server</strong> con verificación tras guardar y se protege con un <em>circuit breaker</em>. Incluye un banco de evaluación que mide el acierto de cada estrategia.</p>
+            <ul class="chips">
+              <li>Python</li><li>Selenium</li><li>OCR</li><li>SQL Server</li><li>SQLAlchemy</li><li>pytest</li>
+            </ul>
+            <p class="project__links">
+              <a href="https://github.com/DarwinMontiel/vigia-ocr" target="_blank" rel="noopener">Código y resultados</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project project--reverse">
+          <a class="project__media" href="https://darwinmontiel.github.io/radar-cartera/" target="_blank" rel="noopener">
+            <img src="assets/img/radar-cartera.webp" width="960" height="600" loading="lazy" alt="Tablero de Radar de Cartera con saldo, PAR30, recaudo y franjas de mora">
+          </a>
+          <div class="project__body">
+            <p class="project__kicker">Datos · ETL · Business Intelligence</p>
+            <h3>Radar de Cartera</h3>
+            <p>ETL que convierte exportes "sucios" en un <strong>modelo estrella</strong>: 29 reglas de calidad de datos con cuarentena, KPIs de riesgo y cobranza (PAR30, roll rates, efectividad de promesas), medidas <strong>DAX</strong> para Power BI y reporte Excel. Las pruebas verifican que pandas y SQL den exactamente los mismos números.</p>
+            <ul class="chips">
+              <li>Python</li><li>pandas</li><li>PostgreSQL</li><li>SQL</li><li>Power BI · DAX</li><li>Excel</li>
+            </ul>
+            <p class="project__links">
+              <a href="https://darwinmontiel.github.io/radar-cartera/" target="_blank" rel="noopener">Tablero en vivo</a>
+              <a href="https://github.com/DarwinMontiel/radar-cartera" target="_blank" rel="noopener">Código</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <a class="project__media" href="https://github.com/DarwinMontiel/faro-cobranza" target="_blank" rel="noopener">
+            <img src="assets/img/faro-cobranza.webp" width="960" height="600" loading="lazy" alt="Tablero de Faro Cobranza con indicadores y próximas cuotas">
           </a>
           <div class="project__body">
             <p class="project__kicker">Backend · Web · APIs REST</p>
-            <h3>Cartera CRM</h3>
-            <p>Aplicación de gestión de cobranza en <strong>Ruby on Rails 8 + Hotwire</strong>: bandeja de cobro, gestiones con promesas de pago, acuerdos con cuotas en días hábiles (API de festivos con respaldo) y <strong>API REST</strong> con tokens para bots. Las reglas críticas se garantizan también en la base de datos.</p>
+            <h3>Faro Cobranza</h3>
+            <p>CRM de cobranza en <strong>Ruby on Rails 8 + Hotwire</strong>: bandeja por días de mora, gestiones con promesas de pago, acuerdos con cuotas en días hábiles según los festivos de Colombia y <strong>API REST</strong> idempotente con tokens para que los bots registren su trabajo. Las reglas críticas se garantizan también en la base de datos.</p>
             <ul class="chips">
               <li>Ruby on Rails</li><li>Turbo · Stimulus</li><li>PostgreSQL</li><li>Minitest</li><li>Kamal</li>
             </ul>
             <p class="project__links">
-              <a href="https://github.com/DarwinMontiel/cartera-crm" target="_blank" rel="noopener">Código y capturas</a>
+              <a href="https://github.com/DarwinMontiel/faro-cobranza" target="_blank" rel="noopener">Código y capturas</a>
             </p>
           </div>
         </article>
@@ -154,23 +190,23 @@
         <div class="cards">
           <article class="card">
             <p class="project__kicker">IA generativa</p>
-            <h3>llm-gateway</h3>
-            <p>Cliente Python para modelos locales (Ollama) y en la nube (Groq) con streaming, reintentos con backoff y <em>fallback</em> automático. Probado sin red.</p>
+            <h3>Puente LLM</h3>
+            <p>Una sola interfaz para un modelo local (Ollama) y uno en la nube (Groq): streaming, reintentos con backoff y respaldo automático. CLI en español y ejemplos de cobranza.</p>
             <ul class="chips"><li>Python</li><li>httpx</li><li>Ollama</li><li>Groq</li></ul>
-            <a class="card__link" href="https://github.com/DarwinMontiel/llm-gateway" target="_blank" rel="noopener">Ver repositorio</a>
+            <a class="card__link" href="https://github.com/DarwinMontiel/puente-llm" target="_blank" rel="noopener">Ver repositorio</a>
           </article>
           <article class="card">
             <p class="project__kicker">RPA · Certificación</p>
             <h3>Robot de pedidos Robocorp</h3>
-            <p>Bot de la certificación Robocorp Level I: Page Object, reintentos ante un servidor inestable, recibos PDF con imagen y resiliencia por pedido.</p>
+            <p>Bot de la certificación Robocorp: valida el lote, reintenta envíos fallidos, genera recibos PDF y un reporte del turno con Page Object y resiliencia por pedido.</p>
             <ul class="chips"><li>Python</li><li>Robocorp</li><li>RPA Framework</li></ul>
-            <a class="card__link" href="https://github.com/DarwinMontiel/robocorp-order-robot" target="_blank" rel="noopener">Ver repositorio</a>
+            <a class="card__link" href="https://github.com/DarwinMontiel/robot-pedidos-robocorp" target="_blank" rel="noopener">Ver repositorio</a>
           </article>
           <article class="card">
             <p class="project__kicker">Frontend · Académico</p>
             <h3>Tu Amigo Viajero</h3>
-            <p>Sitio web responsive de una agencia de viajes, desarrollado en equipo sobre una plantilla Bootstrap con Sass y jQuery.</p>
-            <ul class="chips"><li>HTML5</li><li>Sass</li><li>Bootstrap</li></ul>
+            <p>Agencia de viajes ficticia por Colombia, hecha en equipo: destinos, planes en pesos y un simulador de pago a cuotas con tabla de amortización.</p>
+            <ul class="chips"><li>HTML5</li><li>Sass</li><li>JavaScript</li></ul>
             <a class="card__link" href="https://darwinmontiel.github.io/tu-amigo-viajero/" target="_blank" rel="noopener">Ver sitio</a>
           </article>
         </div>
@@ -190,11 +226,13 @@
               <h3>Desarrollador RPA · <span>Liquitty</span></h3>
               <p class="muted">Fintech multinacional de gestión de cartera · Colombia, Chile y Perú · Bogotá (híbrido)</p>
               <ul>
-                <li>Bots RPA en Python que automatizan procesos sobre aplicativos web.</li>
-                <li>Integración con RabbitMQ para distribuir la carga y procesar transacciones de forma desacoplada.</li>
-                <li>PostgreSQL para datos de entrada, estados de ejecución y trazabilidad.</li>
-                <li>Proyecto de monitoreo de bots para detectar y atender fallas a tiempo.</li>
-                <li>Gestión de servidores Windows y Linux y despliegues a producción.</li>
+                <li>3 bots RPA (Python, Playwright, SQL Server) que sincronizan expedientes jurídicos con 3 bancos: más de 12.000 en alcance, el primero en producción desde julio de 2026.</li>
+                <li>Bots de prevalidación sobre RabbitMQ: colas prioritarias, ACK/NACK, DLQ y respaldo por API HTTP.</li>
+                <li>Lectura de imágenes con OCR (ddddocr, EasyOCR, Tesseract): el acierto subió de ≈65 % a ≈99 %.</li>
+                <li>Bot de pagarés desmaterializados llevado a otra cartera y a producción en 2 días: 981 pagarés, 95,8 % con certificado.</li>
+                <li>Plataforma de monitoreo en tiempo real (TypeScript, PostgreSQL) que lee 56 colas y cataloga 37 servidores y 26 bots; lista para despliegue.</li>
+                <li>Fiabilidad por diseño: idempotencia, verificación tras guardar, circuit breaker y más de 400 pruebas automatizadas.</li>
+                <li>Actualización automática desde GitLab en servidores Windows (cada cambio llega en 15 minutos o menos).</li>
               </ul>
             </div>
           </li>
@@ -213,9 +251,9 @@
             <div class="timeline__when">Jun 2023 – Dic 2024</div>
             <div class="timeline__what">
               <h3>Desarrollador de Software · <span>PulpiFrut</span></h3>
-              <p class="muted">Comercializadora de alimentos · remoto</p>
+              <p class="muted">Comercializadora de alimentos · remoto desde Bogotá</p>
               <ul>
-                <li>Procesamiento y análisis de datos con Python (pandas), reportes en Excel avanzado y dashboards de Power BI.</li>
+                <li>Procesamiento y análisis de datos con Python (pandas), interfaces con HTML5, CSS3 y JavaScript, reportes en Excel avanzado y dashboards de Power BI.</li>
                 <li>Reducción del 30 % en los tiempos de entrega mediante la optimización de procesos.</li>
               </ul>
             </div>
@@ -240,12 +278,12 @@
           <h2>Habilidades</h2>
         </header>
         <div class="skills">
-          <div><h3>Lenguajes</h3><ul class="chips"><li>Python</li><li>SQL</li><li>JavaScript</li><li>Ruby</li></ul></div>
-          <div><h3>RPA y automatización</h3><ul class="chips"><li>Bots en Python</li><li>Playwright</li><li>Robocorp</li><li>Blue Prism</li><li>Control Room</li></ul></div>
-          <div><h3>Backend y mensajería</h3><ul class="chips"><li>RabbitMQ</li><li>APIs REST</li><li>FastAPI</li><li>Ruby on Rails</li><li>Hotwire</li></ul></div>
-          <div><h3>Bases de datos</h3><ul class="chips"><li>PostgreSQL</li><li>SQL Server</li><li>MySQL</li></ul></div>
-          <div><h3>Infraestructura</h3><ul class="chips"><li>Linux</li><li>Windows Server</li><li>Docker</li><li>GitHub Actions</li><li>Git</li></ul></div>
-          <div><h3>Datos y BI</h3><ul class="chips"><li>pandas</li><li>Power BI</li><li>DAX</li><li>Power Query</li><li>Excel avanzado</li></ul></div>
+          <div><h3>Lenguajes</h3><ul class="chips"><li>Python</li><li>TypeScript</li><li>SQL</li><li>JavaScript</li><li>Ruby</li></ul></div>
+          <div><h3>RPA y automatización</h3><ul class="chips"><li>Playwright</li><li>Selenium</li><li>OCR</li><li>Blue Prism</li><li>Robocorp</li><li>Control Room</li></ul></div>
+          <div><h3>Backend y mensajería</h3><ul class="chips"><li>RabbitMQ</li><li>APIs REST</li><li>Node.js</li><li>Fastify</li><li>Redis</li><li>WebSocket</li><li>Ruby on Rails</li></ul></div>
+          <div><h3>Bases de datos</h3><ul class="chips"><li>SQL Server</li><li>PostgreSQL</li><li>MySQL</li></ul></div>
+          <div><h3>DevOps e infraestructura</h3><ul class="chips"><li>Docker</li><li>nginx</li><li>Linux</li><li>Windows Server</li><li>Git · GitLab</li><li>GitHub Actions</li></ul></div>
+          <div><h3>Calidad y datos</h3><ul class="chips"><li>pytest</li><li>Vitest</li><li>mypy</li><li>Ruff</li><li>pandas</li><li>Power BI · DAX</li><li>Excel avanzado</li></ul></div>
         </div>
 
         <div class="grid2">
@@ -253,16 +291,16 @@
             <h3 class="subhead">Certificaciones</h3>
             <ul class="list">
               <li><strong>Blue Prism Developer Certification</strong> · SS&amp;C Blue Prism</li>
-              <li><strong>Automation Developer – Python</strong> · Robocorp</li>
-              <li><strong>PCAP – Programming Essentials in Python</strong> · Cisco</li>
-              <li><strong>DevOps</strong> · Cisco</li>
+              <li><strong>Automation Developer – Python (niveles I a III)</strong> · Robocorp · 2025</li>
+              <li><strong>PCAP: Programming Essentials in Python</strong> · Cisco Networking Academy · 2024</li>
+              <li><strong>DevOps</strong> · Cisco Networking Academy</li>
             </ul>
           </div>
           <div>
-            <h3 class="subhead">Formación</h3>
+            <h3 class="subhead">Formación e idiomas</h3>
             <ul class="list">
-              <li><strong>Ingeniería de Sistemas</strong> · Universidad ECCI · 2020 – 2025 (pensum finalizado)</li>
-              <li><strong>Bachillerato Media Técnica en Sistemas</strong> · INEM José Félix de Restrepo · 2015 – 2018</li>
+              <li><strong>Ingeniería de Sistemas</strong> · Universidad ECCI · 2020 – 2025 · plan de estudios terminado, pendiente de grado</li>
+              <li><strong>Español</strong> nativo · <strong>Inglés</strong> pre-intermedio (A2)</li>
             </ul>
           </div>
         </div>
@@ -272,10 +310,11 @@
     <section id="contacto" class="section section--contact">
       <div class="wrap contact">
         <h2>¿Hablamos?</h2>
-        <p>Busco equipos donde automatizar procesos, construir backends confiables y trabajar con datos tenga impacto real en la operación.</p>
+        <p>Busco equipos donde automatizar procesos, construir backends confiables y trabajar con datos tenga impacto real en la operación. Bogotá, Colombia · presencial, híbrido o remoto.</p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="https://www.linkedin.com/in/darwin-montiel-mora-925216206" rel="me noopener" target="_blank">Escríbeme por LinkedIn</a>
-          <a class="btn" href="https://github.com/DarwinMontiel" rel="me noopener" target="_blank">Ver mi GitHub</a>
+          <a class="btn btn--primary" href="mailto:darwinmontielm@gmail.com">darwinmontielm@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/darwin-montiel-mora-925216206" rel="me noopener" target="_blank">LinkedIn</a>
+          <a class="btn" href="https://github.com/DarwinMontiel" rel="me noopener" target="_blank">GitHub</a>
         </div>
       </div>
     </section>

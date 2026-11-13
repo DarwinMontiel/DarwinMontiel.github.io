@@ -29,11 +29,13 @@ GitHub Pages publica automáticamente la rama `main`.
 
 ## Proyectos enlazados
 
-[rpa-orchestrator](https://github.com/DarwinMontiel/rpa-orchestrator) ·
-[cartera-analytics](https://github.com/DarwinMontiel/cartera-analytics) ·
-[cartera-crm](https://github.com/DarwinMontiel/cartera-crm) ·
-[llm-gateway](https://github.com/DarwinMontiel/llm-gateway) ·
-[robocorp-order-robot](https://github.com/DarwinMontiel/robocorp-order-robot) ·
+[colmena-rpa](https://github.com/DarwinMontiel/colmena-rpa) ·
+[torre-de-control](https://github.com/DarwinMontiel/torre-de-control) ·
+[vigia-ocr](https://github.com/DarwinMontiel/vigia-ocr) ·
+[radar-cartera](https://github.com/DarwinMontiel/radar-cartera) ·
+[faro-cobranza](https://github.com/DarwinMontiel/faro-cobranza) ·
+[puente-llm](https://github.com/DarwinMontiel/puente-llm) ·
+[robot-pedidos-robocorp](https://github.com/DarwinMontiel/robot-pedidos-robocorp) ·
 [tu-amigo-viajero](https://github.com/DarwinMontiel/tu-amigo-viajero)
 
 Código bajo licencia [MIT](LICENSE). El contenido (textos, foto) es de Darwin Montiel Mora.
