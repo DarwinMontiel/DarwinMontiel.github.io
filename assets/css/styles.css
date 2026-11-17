@@ -125,6 +125,19 @@ h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
 .project__media:hover img { transform: scale(1.02); }
 .project__kicker { margin: 0 0 6px; color: var(--accent-strong); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .7px; }
 .project h3 { font-size: 26px; }
+/* Cada proyecto tiene su propia identidad visual; su color marca la tarjeta (solo como adorno,
+   el texto sigue en los colores del sitio para no perder contraste). */
+.project { --proyecto: var(--accent); }
+.project--colmena { --proyecto: #f2a516; }
+.project--torre { --proyecto: #39d98a; }
+.project--vigia { --proyecto: #b8392e; }
+.project--radar { --proyecto: #d4a72c; }
+.project--faro { --proyecto: #5b53e6; }
+.project__media { border-top: 4px solid var(--proyecto); }
+.project__kicker::before {
+  content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 2px;
+  background: var(--proyecto); vertical-align: 0;
+}
 .project__body p { margin: 12px 0 0; }
 .project__links { display: flex; gap: 18px; font-weight: 600; }
 
