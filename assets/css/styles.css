@@ -133,8 +133,9 @@ h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
 .project--vigia { --proyecto: #b8392e; }
 .project--radar { --proyecto: #d4a72c; }
 .project--faro { --proyecto: #5b53e6; }
+.project--viajero { --proyecto: #b8400b; }
 .project__media { border-top: 4px solid var(--proyecto); }
-.project__kicker::before {
+.project .project__kicker::before {
   content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 2px;
   background: var(--proyecto); vertical-align: 0;
 }
